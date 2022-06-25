@@ -89,7 +89,7 @@ void execute_commands(struct command_pipeline* pipeline, int* status){
                 }
             }
             if(i != count-1){
-                if(dup2(pipe_fd[i-1][1], STDOUT_FILENO) == -1){
+                if(dup2(pipe_fd[i][1], STDOUT_FILENO) == -1){
                     perror("dup2");
                     exit(EXIT_FAILURE);
                 }
