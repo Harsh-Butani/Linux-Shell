@@ -258,9 +258,9 @@ void create_pipeline(char* input, struct command_pipeline* pipeline){
         parse_cmd(&cmd, token);
         size++;
         insert_cmd(pipeline, cmd);
-        pipeline->num_of_cmds = size;
         token = strtok(NULL, "|");
     }
+    pipeline->num_of_cmds = size;
 }
 
 char* read_command(){
