@@ -189,7 +189,7 @@ void parse_cmd(struct command** cmd_ptr, char* input){
         if(i<len && !isspace(input[i])){
             str[arg_size++] = input[i];
         }
-        else if(i==len || arg_size >= 1){
+        else if((i==len && arg_size >= 1) || (i+1<len && !isspace(input[i+1]) && arg_size>=1)){
             str[arg_size]='\0';
             arg_size = 0;
             if(!strcmp(prev_str, "<")){
