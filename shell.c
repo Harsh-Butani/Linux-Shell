@@ -300,7 +300,8 @@ int main(int argc, char** argv){
     pipeline.num_of_cmds = 0;
     int status = 1;
     while(status){
-        printf(GREEN"Shell$ "RESET);
+        printf(GREEN"Shell"RESET);
+        printf(":$ ");
         input = read_command();
         create_pipeline(input, &pipeline);
         execute_commands(&pipeline, &status);
